@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Sovereignty // Learn. Understand. Fight Back.</title>
+  <meta name="description" content="An interactive learning site about AI data centers: what they are, what they consume, who they harm, and how communities can fight back.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== SHARED NAV ===== -->
+  <header class="site-nav">
+    <a class="nav-brand" href="index.html"><span class="nav-blink">&#9646;</span> DIGITAL_SOVEREIGNTY</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html" class="is-active">Home</a></li>
+        <li><a href="what-is.html">Learn</a></li>
+        <li><a href="fight-back.html">Take Action</a></li>
+        <li><a href="green-ai.html">Green AI</a></li>
+        <li><a href="behind-the-project.html">The Project</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+  <!-- ===== LANDING HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero-meta">
+      <span class="tag tag-crimson">UNREDACTED</span>
+      <span class="tag tag-amber">INTERACTIVE FIELD GUIDE</span>
+    </div>
+    <h1 class="hero-title">DIGITAL<br>SOVEREIGNTY</h1>
+    <p class="hero-sub">Learn what AI data centers really cost &mdash; and how to fight back.</p>
+    <p class="hero-summary">
+      The &ldquo;cloud&rdquo; is not a cloud. It is a physical industry of warehouses, water
+      lines, and power plants being built in real communities &mdash; often in secret. This
+      is a step-by-step field guide: understand the infrastructure, see the damage, and learn
+      the legal tools that put the power back in residents&rsquo; hands.
+    </p>
+    <div class="link-row">
+      <a class="ext-link" href="what-is.html">Start learning &rarr;</a>
+      <a class="ext-link" href="fight-back.html">Jump to action toolkit &rarr;</a>
+    </div>
+
+    <!-- ===== INTERACTIVE SCALE VISUALIZER ===== -->
+    <div class="visualizer" aria-label="Interactive scale visualizer">
+      <div class="viz-head">
+        <h3>What does your AI use add up to?</h3>
+        <span class="viz-flag">Illustrative</span>
+      </div>
+      <div class="viz-body">
+        <div class="viz-control">
+          <label for="viz-slider">
+            You run <span class="viz-count" id="viz-count">10</span> AI prompts a day
+          </label>
+          <input type="range" id="viz-slider" min="1" max="100" value="10"
+                 aria-describedby="viz-readout">
+          <div class="viz-scale"><span>1</span><span>a few</span><span>heavy use</span><span>100+</span></div>
+        </div>
+
+        <div class="viz-grid" id="viz-readout">
+          <div class="viz-metric water">
+            <span class="viz-icon">Water draw</span>
+            <div class="viz-meter"><div class="viz-fill" id="fill-water"></div></div>
+            <span class="viz-word" id="word-water">Low</span>
+            <p class="viz-sub">Cooling water for the servers handling your prompts.</p>
+          </div>
+          <div class="viz-metric energy">
+            <span class="viz-icon">Grid demand</span>
+            <div class="viz-meter"><div class="viz-fill" id="fill-energy"></div></div>
+            <span class="viz-word" id="word-energy">Low</span>
+            <p class="viz-sub">Electricity pulled to power that compute.</p>
+          </div>
+          <div class="viz-metric scale">
+            <span class="viz-icon">&times; millions of users</span>
+            <div class="viz-meter"><div class="viz-fill" id="fill-scale"></div></div>
+            <span class="viz-word" id="word-scale">Adds up fast</span>
+            <p class="viz-sub">Your usage is tiny &mdash; but it never happens alone.</p>
+          </div>
+        </div>
+      </div>
+      <p class="viz-note">
+        This is a <strong>relative</strong> visualizer, not a measurement. It shows how small
+        individual use compounds across millions of people &mdash; the reason a single
+        person&rsquo;s habits feel harmless while the industry&rsquo;s footprint is enormous.
+        Exact per-prompt figures are widely disputed; <a href="behind-the-project.html">here&rsquo;s why this project doesn&rsquo;t publish them &rarr;</a>
+      </p>
+    </div>
+
+    <figure class="hero-figure" style="margin-top:3rem;">
+      <img src="images/OMBDatacenterHero9_18_25.jpg" alt="Aerial view of a sprawling AI data center under construction beside farmland, with a large outdoor cooling array.">
+      <figcaption>A hyperscale data center pressed against farmland &mdash; the physical reality behind the &ldquo;cloud.&rdquo;</figcaption>
+    </figure>
+  </section>
+
+  <!-- ===== HOW THIS GUIDE WORKS ===== -->
+  <section class="band">
+    <div class="section-head">
+      <span class="section-index">THE PATH</span>
+      <h2 class="section-title">FOUR STEPS,<br>ONE GOAL</h2>
+      <p class="section-kicker">Move through the guide in order, or jump to what you need. By the end you&rsquo;ll know enough to act.</p>
+    </div>
+    <div class="grid grid-4">
+      <a class="card card-product" href="what-is.html" style="text-decoration:none;color:inherit;">
+        <span class="card-tag tag-green">STEP 01</span>
+        <h4>Understand</h4>
+        <p>What an AI data center actually is &mdash; and what it pulls from the ground: water, power, and land.</p>
+      </a>
+      <a class="card card-impact" href="impacts.html" style="text-decoration:none;color:inherit;">
+        <span class="card-tag tag-crimson">STEP 02</span>
+        <h4>See the harm</h4>
+        <p>The documented impacts on people, health, land, and local economies &mdash; and the secrecy that hides them.</p>
+      </a>
+      <a class="card card-threat" href="fight-back.html" style="text-decoration:none;color:inherit;">
+        <span class="card-tag tag-amber">STEP 03</span>
+        <h4>Fight back</h4>
+        <p>The legal toolkit: zoning, FOIA, NDAs, utility interventions, the 10th Amendment, and community benefit agreements.</p>
+      </a>
+      <a class="card card-product" href="green-ai.html" style="text-decoration:none;color:inherit;">
+        <span class="card-tag tag-green">STEP 04</span>
+        <h4>A better path</h4>
+        <p>What genuinely sustainable, &ldquo;green&rdquo; AI infrastructure could look like &mdash; and why we have to demand it.</p>
+      </a>
+    </div>
+  </section>
+  </main>
+
+  <!-- ===== SHARED FOOTER ===== -->
+  <footer class="site-footer">
+    <p class="footer-title">DIGITAL_SOVEREIGNTY</p>
+    <p class="footer-meta">An interactive learning project &middot; AI + Design Studio &middot; [INSERT DATA: Student name] &middot; [INSERT DATA: Year/Quarter]</p>
+    <p class="footer-note">Real photography only &mdash; no AI-generated imagery. Built with hand-written HTML &amp; CSS.</p>
+  </footer>
+  <!-- ===== SCALE VISUALIZER SCRIPT =====
+       The only JavaScript on the site. It updates the visualizer as the
+       slider moves. Deliberately uses RELATIVE levels (not precise figures),
+       in keeping with the project's "don't publish numbers you can't verify"
+       stance. No data is stored; everything runs live in the browser. -->
+  <script>
+    (function () {
+      var slider = document.getElementById('viz-slider');
+      if (!slider) return; // safety: do nothing if the widget isn't on the page
+
+      var countEl = document.getElementById('viz-count');
+      var fillWater  = document.getElementById('fill-water');
+      var fillEnergy = document.getElementById('fill-energy');
+      var fillScale  = document.getElementById('fill-scale');
+      var wordWater  = document.getElementById('word-water');
+      var wordEnergy = document.getElementById('word-energy');
+      var wordScale  = document.getElementById('word-scale');
+
+      // turn a 0-100 percentage into a plain-language level
+      function level(pct) {
+        if (pct < 20) return 'Minimal';
+        if (pct < 45) return 'Low';
+        if (pct < 70) return 'Notable';
+        if (pct < 90) return 'High';
+        return 'Extreme';
+      }
+
+      function update() {
+        var prompts = parseInt(slider.value, 10);
+        countEl.textContent = prompts;
+
+        // individual impact scales gently with usage (stays modest)
+        var individual = Math.min(100, 5 + prompts * 0.85);
+
+        // the "x millions of users" bar ramps faster, to make the
+        // compounding point: small personal use, huge collective total
+        var collective = Math.min(100, 15 + prompts * 0.9);
+
+        fillWater.style.width  = individual + '%';
+        fillEnergy.style.width = individual + '%';
+        fillScale.style.width  = collective + '%';
+
+        wordWater.textContent  = level(individual);
+        wordEnergy.textContent = level(individual);
+        wordScale.textContent  = collective > 80 ? 'Enormous' : 'Adds up fast';
+      }
+
+      slider.addEventListener('input', update);
+      update(); // set the starting state
+    })();
+  </script>
+</body>
+</html>

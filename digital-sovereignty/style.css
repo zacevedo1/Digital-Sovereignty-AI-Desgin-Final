@@ -1,0 +1,768 @@
+/* =================================================================
+   DIGITAL SOVEREIGNTY // style.css
+   "Tactical Terminal" — high-contrast grassroots command center.
+   Palette and typography per design-direction.md.
+   ================================================================= */
+
+/* ---------- 1. DESIGN TOKENS ---------- */
+:root {
+  /* Tactical Terminal color palette (design-direction.md) */
+  --void:    #0D0F12;   /* Deep Obsidian Void — background canvas */
+  --offwhite:#F0F4F8;   /* High-Visibility Off-White — text & borders */
+  --green:   #00FF66;   /* Terminal Phosphor Green — active / verification */
+  --amber:   #FFB700;   /* Warning Amber — grid / water threat alerts */
+  --crimson: #FF3333;   /* Tactical Crimson — critical violations / NDA */
+
+  /* Supporting surfaces derived from the void (kept high-contrast) */
+  --panel:   #14171C;   /* slightly raised panel */
+  --panel-2: #1B1F26;   /* alternate band */
+  --muted:   #8A93A0;   /* secondary text */
+  --border:  var(--offwhite);
+
+  /* Typography stacks.
+     Headings: Archivo Black (Google Fonts).
+     Body: Elza Text — a commercial face; we name it first, then fall back
+     to a close grotesque stack so the site is robust on GitHub Pages. */
+  --font-head: "Archivo Black", "Arial Black", sans-serif;
+  --font-body: "Elza Text", "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- 2. RESET & BASE ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--void);
+  color: var(--offwhite);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: var(--green); }
+
+/* Accessibility skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--green);
+  color: var(--void);
+  padding: 0.6rem 1rem;
+  font-family: var(--font-head);
+  z-index: 1000;
+}
+.skip-link:focus { left: 0; }
+
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+summary:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+
+/* ---------- 3. TYPOGRAPHY HELPERS ---------- */
+.body,
+.reflection-body p {
+  max-width: 65ch;          /* frictionless reading length (ch unit) */
+  margin-bottom: 1.25rem;
+}
+.body strong { color: var(--green); }
+
+.body-muted {
+  color: var(--muted);
+  max-width: 65ch;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.sub-head {
+  font-family: var(--font-head);
+  font-size: clamp(1.3rem, 1rem + 1.4vw, 1.9rem);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 3rem 0 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+}
+
+/* ---------- 4. TOP NAVIGATION ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.5rem;
+  background: var(--void);
+  border-bottom: 2px solid var(--border);
+}
+
+.nav-brand {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: var(--offwhite);
+  text-decoration: none;
+}
+.nav-blink { color: var(--green); }
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--offwhite);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.nav-links a:hover { color: var(--green); border-color: var(--green); }
+
+/* ---------- 5. SHARED LAYOUT ---------- */
+.hero,
+.band {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+.band-alt { background: var(--panel-2); max-width: none; }
+.band-alt > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+/* ---------- 6. HERO ---------- */
+.hero-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.5rem; }
+
+.tag {
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.7rem;
+  border: 2px solid var(--border);
+  text-transform: uppercase;
+}
+.tag-green   { color: var(--green);   border-color: var(--green); }
+.tag-amber   { color: var(--amber);   border-color: var(--amber); }
+.tag-crimson { color: var(--crimson); border-color: var(--crimson); }
+
+.hero-title {
+  font-family: var(--font-head);
+  /* maximalist scaling via clamp() */
+  font-size: clamp(3rem, 1rem + 13vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.hero-sub {
+  font-family: var(--font-head);
+  font-size: clamp(1.1rem, 0.8rem + 1.5vw, 1.8rem);
+  color: var(--amber);
+  margin: 1rem 0 2rem;
+}
+
+.hero-summary {
+  max-width: 60ch;
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-credits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 2px solid var(--border);
+  margin-bottom: 3rem;
+}
+.hero-credits > div { background: var(--void); padding: 1.1rem 1.2rem; }
+.hero-credits dt {
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.4rem;
+}
+.hero-credits dd { font-size: 1rem; }
+
+.hero-figure { border: 2px solid var(--border); }
+.hero-figure img { width: 100%; }
+
+/* ---------- 7. FIGURES & CAPTIONS ---------- */
+figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 0.8rem 1rem;
+  border-top: 2px solid var(--border);
+}
+.wide-figure {
+  border: 2px solid var(--border);
+  margin-top: 2.5rem;
+}
+
+/* ---------- 8. SECTION HEADERS ---------- */
+.section-head { margin-bottom: 2.5rem; }
+.section-index {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  color: var(--green);
+  letter-spacing: 2px;
+}
+.section-title {
+  font-family: var(--font-head);
+  font-size: clamp(2.2rem, 1rem + 6vw, 5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0.3rem 0 0.8rem;
+}
+.section-kicker {
+  color: var(--amber);
+  max-width: 55ch;
+  font-size: 1.05rem;
+}
+
+/* ---------- 9. CALLOUTS ---------- */
+.callout {
+  border: 2px solid var(--border);
+  border-left-width: 8px;
+  padding: 1.5rem 1.6rem;
+  margin: 2rem 0;
+  background: var(--panel);
+}
+.callout p { max-width: 70ch; font-size: 1.1rem; }
+.callout-label {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+.callout-green   { border-left-color: var(--green); }
+.callout-green   .callout-label { color: var(--green); }
+.callout-crimson { border-left-color: var(--crimson); }
+.callout-crimson .callout-label { color: var(--crimson); }
+.callout-amber   { border-left-color: var(--amber); }
+.callout-amber   .callout-label { color: var(--amber); }
+
+/* ---------- 10. CARD GRIDS (compartmentalized, sharp borders) ---------- */
+.grid { display: grid; gap: 1.25rem; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.card {
+  background: var(--panel);
+  border: 2px solid var(--border);
+  padding: 1.3rem 1.4rem;
+}
+.card h4 {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  line-height: 1.1;
+}
+.card p { font-size: 0.95rem; color: var(--offwhite); }
+
+.card-tag {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid var(--border);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* threat cards get an amber top accent; product cards a green one */
+.card-threat  { border-top: 6px solid var(--amber); }
+.card-product { border-top: 6px solid var(--green); }
+.card-green-edge { border-left: 6px solid var(--green); }
+
+/* ---------- 11. STAT STRIP ---------- */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 2px solid var(--border);
+}
+.stat { background: var(--void); padding: 1.4rem 1.2rem; }
+.stat-num {
+  display: block;
+  font-family: var(--font-head);
+  font-size: clamp(1.6rem, 1rem + 2vw, 2.4rem);
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+.stat-label { font-size: 0.85rem; color: var(--muted); }
+
+/* ---------- 12. TIMELINE (progressive disclosure) ---------- */
+.timeline { list-style: none; }
+.timeline-item {
+  position: relative;
+  border-left: 2px solid var(--border);
+  padding: 0 0 2rem 1.6rem;
+  margin-left: 0.5rem;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  background: var(--green);
+  border: 2px solid var(--void);
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-week {
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  color: var(--green);
+}
+.timeline-item h4 {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 0.4rem 0 0.5rem;
+}
+.timeline-item p { max-width: 65ch; font-size: 0.95rem; }
+/* the pivot moment is flagged in crimson */
+.timeline-pivot::before { background: var(--crimson); }
+.timeline-pivot .timeline-week { color: var(--crimson); }
+
+/* ---------- 13. ACCORDIONS (legal/prompt deep dives) ---------- */
+.accordion {
+  border: 2px solid var(--border);
+  margin-bottom: 0.9rem;
+  background: var(--panel);
+}
+.accordion summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 1.2rem;
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion summary::-webkit-details-marker { display: none; }
+.accordion summary::after {
+  content: "+";
+  color: var(--green);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.accordion[open] summary::after { content: "\2212"; } /* minus */
+.accordion[open] summary { border-bottom: 2px solid var(--border); }
+.accordion-body { padding: 1.1rem 1.2rem; }
+.accordion-body p { max-width: 70ch; font-size: 0.95rem; }
+
+/* source lists inside accordions */
+.source-list { list-style: none; }
+.source-list li {
+  font-size: 0.92rem;
+  padding: 0.55rem 0 0.55rem 1.1rem;
+  border-bottom: 1px solid rgba(240, 244, 248, 0.15);
+  position: relative;
+}
+.source-list li:last-child { border-bottom: none; }
+.source-list li::before {
+  content: "\203A";          /* › marker */
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+.source-list a { word-break: break-word; }
+
+/* ---------- 14. EXTERNAL LINK ROW ---------- */
+.link-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+.ext-link {
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--green);
+  text-decoration: none;
+  border: 2px solid var(--green);
+  padding: 0.7rem 1.1rem;
+  transition: background 0.15s, color 0.15s;
+}
+.ext-link:hover { background: var(--green); color: var(--void); }
+
+/* ---------- 15. FOOTER ---------- */
+.site-footer {
+  border-top: 2px solid var(--border);
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.footer-title {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+}
+.footer-meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
+.footer-note { color: var(--green); font-size: 0.8rem; letter-spacing: 0.5px; }
+
+/* ---------- 16. RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  body { font-size: 17px; }
+  .hero, .band { padding: 3.5rem 1.2rem; }
+  .nav-links { gap: 0.9rem; width: 100%; }
+  .nav-links a { font-size: 0.78rem; }
+  .grid-2,
+  .grid-3,
+  .grid-4 { grid-template-columns: 1fr; }
+  .hero-credits { grid-template-columns: 1fr; }
+  .stat-strip { grid-template-columns: 1fr; }
+}
+
+/* =================================================================
+   17. MULTI-PAGE LEARNING COMPONENTS
+   Added for the interactive learning site (separate HTML pages).
+   ================================================================= */
+
+/* ---- active nav state ---- */
+.nav-links a.is-active { color: var(--green); border-color: var(--green); }
+
+/* ---- learning-journey progress bar under nav ---- */
+.journey {
+  background: var(--panel);
+  border-bottom: 2px solid var(--border);
+  overflow-x: auto;
+}
+.journey-track {
+  display: flex;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  list-style: none;
+  min-width: max-content;
+}
+.journey-track li {
+  flex: 1 0 auto;
+  border-right: 1px solid rgba(240,244,248,0.15);
+}
+.journey-track li:last-child { border-right: none; }
+.journey-track a {
+  display: block;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  color: var(--muted);
+  font-family: var(--font-head);
+  font-size: 0.68rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.journey-track a:hover { color: var(--offwhite); }
+.journey-track .step-num { color: var(--green); margin-right: 0.4rem; }
+.journey-track li.is-active a { color: var(--offwhite); background: rgba(0,255,102,0.08); }
+.journey-track li.is-active .step-num { color: var(--green); }
+
+/* ---- page hero (lighter than the landing hero) ---- */
+.page-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 2rem;
+}
+.page-hero .eyebrow {
+  font-family: var(--font-head);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green);
+}
+.page-hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 1rem + 7vw, 5.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0.4rem 0 1rem;
+}
+.page-hero .lede {
+  max-width: 60ch;
+  font-size: 1.2rem;
+  color: var(--offwhite);
+}
+.page-hero .lede strong { color: var(--amber); }
+
+/* ---- numbered learning steps ---- */
+.step {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  border: 2px solid var(--border);
+  margin-bottom: 1.5rem;
+  background: var(--panel);
+}
+.step-index {
+  background: var(--void);
+  border-right: 2px solid var(--border);
+  font-family: var(--font-head);
+  font-size: 2.4rem;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-content { padding: 1.4rem 1.5rem; }
+.step-content h3 {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.step-content p { max-width: 68ch; }
+.step-content p + p { margin-top: 0.8rem; }
+
+/* ---- definition / key-term box ---- */
+.defbox {
+  border: 2px solid var(--green);
+  border-left-width: 8px;
+  background: rgba(0,255,102,0.05);
+  padding: 1.2rem 1.4rem;
+  margin: 1.5rem 0;
+}
+.defbox .term {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+.defbox p { max-width: 68ch; }
+
+/* ---- consumption meter row (visual, not a fake stat) ---- */
+.meter { margin-bottom: 1.6rem; }
+.meter-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.meter-head .label { font-size: 1rem; }
+.meter-head .tagword { font-size: 0.75rem; letter-spacing: 1px; }
+.meter-bar {
+  height: 18px;
+  background: var(--void);
+  border: 2px solid var(--border);
+  position: relative;
+}
+.meter-fill { height: 100%; }
+.meter-fill.water { background: var(--amber); }
+.meter-fill.energy { background: var(--crimson); }
+.meter-fill.land  { background: var(--green); }
+.meter p { font-size: 0.92rem; color: var(--muted); margin-top: 0.5rem; max-width: 68ch; }
+
+/* ---- impact cards reuse .card; add severity strip ---- */
+.card-impact { border-top: 6px solid var(--crimson); }
+
+/* ---- prev/next pager ---- */
+.pager {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.pager a {
+  flex: 1 1 0;
+  min-width: 220px;
+  border: 2px solid var(--border);
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+  color: var(--offwhite);
+  background: var(--panel);
+  transition: border-color 0.15s, color 0.15s;
+}
+.pager a:hover { border-color: var(--green); color: var(--green); }
+.pager .dir {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.pager .pg-title { font-family: var(--font-head); font-size: 0.95rem; text-transform: uppercase; }
+.pager a.next { text-align: right; }
+
+/* ---- CTA banner ---- */
+.cta-banner {
+  border: 2px solid var(--green);
+  background: rgba(0,255,102,0.06);
+  padding: 2rem 1.6rem;
+  margin: 2.5rem 0;
+  text-align: center;
+}
+.cta-banner h3 {
+  font-family: var(--font-head);
+  font-size: clamp(1.4rem, 1rem + 2vw, 2.2rem);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.cta-banner p { max-width: 60ch; margin: 0 auto 1.2rem; }
+
+@media (max-width: 680px) {
+  .step { grid-template-columns: 60px 1fr; }
+  .step-index { font-size: 1.6rem; }
+  .pager a.next { text-align: left; }
+}
+
+/* =================================================================
+   18. SCALE VISUALIZER (homepage interactive widget)
+   ================================================================= */
+.visualizer {
+  border: 2px solid var(--green);
+  background: var(--panel);
+  margin: 2.5rem 0;
+}
+.viz-head {
+  border-bottom: 2px solid var(--border);
+  padding: 1.1rem 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.viz-head h3 {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.viz-head .viz-flag {
+  font-family: var(--font-head);
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 2px solid var(--amber);
+  padding: 0.2rem 0.5rem;
+}
+.viz-body { padding: 1.4rem; }
+
+/* slider control */
+.viz-control label {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.viz-control label .viz-count { color: var(--green); }
+.viz-control input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: var(--void);
+  border: 2px solid var(--border);
+  cursor: pointer;
+}
+.viz-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: var(--green);
+  border: 2px solid var(--void);
+  cursor: pointer;
+}
+.viz-control input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: var(--green);
+  border: 2px solid var(--void);
+  cursor: pointer;
+  border-radius: 0;
+}
+.viz-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+/* the three impact readouts */
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 2px solid var(--border);
+  margin-top: 1.4rem;
+}
+.viz-metric { background: var(--void); padding: 1.2rem; }
+.viz-metric .viz-icon {
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.viz-metric.water  .viz-icon { color: var(--amber); }
+.viz-metric.energy .viz-icon { color: var(--crimson); }
+.viz-metric.scale  .viz-icon { color: var(--green); }
+.viz-meter {
+  height: 14px;
+  background: var(--panel);
+  border: 2px solid var(--border);
+  margin: 0.7rem 0;
+  overflow: hidden;
+}
+.viz-fill { height: 100%; width: 5%; transition: width 0.18s ease-out; }
+.viz-metric.water  .viz-fill { background: var(--amber); }
+.viz-metric.energy .viz-fill { background: var(--crimson); }
+.viz-metric.scale  .viz-fill { background: var(--green); }
+.viz-metric .viz-word {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.viz-metric .viz-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
+
+.viz-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding: 1rem 1.4rem;
+  border-top: 2px solid var(--border);
+}
+.viz-note a { color: var(--amber); }
+
+@media (max-width: 680px) {
+  .viz-grid { grid-template-columns: 1fr; }
+}

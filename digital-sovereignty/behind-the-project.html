@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behind the Project // Digital Sovereignty</title>
+  <meta name="description" content="The inquiry, research, process, AI collaboration, reflection, and sources behind the Digital Sovereignty learning site.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <a class="nav-brand" href="index.html"><span class="nav-blink">&#9646;</span> DIGITAL_SOVEREIGNTY</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="what-is.html">Learn</a></li>
+        <li><a href="fight-back.html">Take Action</a></li>
+        <li><a href="green-ai.html">Green AI</a></li>
+        <li><a href="behind-the-project.html" class="is-active">The Project</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+  <header class="page-hero">
+    <span class="eyebrow">Behind the project</span>
+    <h1>The Work<br>Behind It</h1>
+    <p class="lede">Yes &mdash; a student made this, and used AI to build it. This page shows the research, the process, and an honest accounting of how AI shaped the outcome. Made by <strong>[INSERT DATA: Student name]</strong> for AI + Design Studio.</p>
+  </header>
+
+  <!-- INQUIRY -->
+  <section class="band" style="padding-top:1rem;">
+    <div class="section-head">
+      <span class="section-index">01</span>
+      <h2 class="section-title">THE INQUIRY</h2>
+      <p class="section-kicker">Where the question started &mdash; and where it ended up.</p>
+    </div>
+
+    <div class="callout callout-green">
+      <span class="callout-label">Core research question</span>
+      <p>How can we translate the physical hazards of AI infrastructure (grid strain, water depletion, noise pollution) and local legal choke points (zoning moratoriums, FOIA, PUC interventions) into an accessible, interactive toolkit that equips citizens to proactively defend their land against Big Tech?</p>
+    </div>
+
+    <p class="body">My starting point was much broader and more passive. I began by investigating &ldquo;Green AI Data Centers&rdquo; &mdash; how tech corporations <em>could</em> shift to sustainable energy &mdash; essentially waiting for the industry to fix itself.</p>
+
+    <div class="callout callout-crimson">
+      <span class="callout-label">The pivot &mdash; the Jevons Paradox</span>
+      <p>Discovering the Jevons Paradox changed everything. As infrastructure becomes more efficient, corporations scale operations fast enough to erase the savings. That&rsquo;s why the sector hasn&rsquo;t truly gone green &mdash; and why I pivoted from waiting on corporate sustainability to building local legal-defense tools. The whole site reflects that shift: it doesn&rsquo;t ask companies to be better, it equips communities to demand it.</p>
+    </div>
+  </section>
+
+  <!-- RESEARCH & PROCESS -->
+  <section class="band band-alt">
+    <div class="section-head">
+      <span class="section-index">02</span>
+      <h2 class="section-title">RESEARCH &amp;<br>PROCESS</h2>
+      <p class="section-kicker">How the research was done, and how the AI was steered.</p>
+    </div>
+
+    <h3 class="sub-head">Workflow timeline</h3>
+    <ol class="timeline">
+      <li class="timeline-item">
+        <span class="timeline-week">WEEK 6</span>
+        <h4>Establishing the &ldquo;why&rdquo;</h4>
+        <p>Built a foundational understanding of how AI data centers affect environment and economy. Logged 26 sources via NotebookLM deep research (~3 hours). Decided early to slightly narrow what the project was trying to solve.</p>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-week">WEEK 7</span>
+        <h4>Sustainable vs. &ldquo;green&rdquo; AI</h4>
+        <p>Recognized the project was more about learning than building. Noticed prompts hallucinated when under-specified &mdash; answers usually arrived 2&ndash;3 chats later once the request was precise.</p>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-week">WEEK 8</span>
+        <h4>Closed-loop cooling &amp; embodied carbon</h4>
+        <p>Studied closed-loop design and embodied carbon. Microsoft&rsquo;s sustainability reports clarified what counts as good transparency &mdash; and how to double-check it.</p>
+      </li>
+      <li class="timeline-item timeline-pivot">
+        <span class="timeline-week">WEEK 9 &mdash; THE PIVOT</span>
+        <h4>From the outside in, to the root</h4>
+        <p>Realized that if the root process of digital economic growth doesn&rsquo;t change, nothing changes. Pivoted to advocacy: what communities can do to halt corporate and local-government decisions. Published the GitHub command center.</p>
+      </li>
+    </ol>
+
+    <h3 class="sub-head">How I verified sources</h3>
+    <p class="body">I treated corporate data not as fact but as a structure to reverse-engineer. The Microsoft Sustainability Report was a key baseline &mdash; even knowing corporate numbers can be spun, analyzing polished reports taught me what to look for when spotting false figures and greenwashing. The throughline: never trust a sustainability <em>goal</em> until you see the physical <em>action</em> behind it.</p>
+
+    <div class="callout callout-amber">
+      <span class="callout-label">A note on numbers</span>
+      <p>Many viral AI-footprint stats &mdash; &ldquo;X bottles of water per query&rdquo; &mdash; trace back to estimates repeated far beyond what their sources actually claim. Applying this project&rsquo;s own standard, I chose not to publish precise figures I couldn&rsquo;t trace to a primary source. The learning pages describe the threat without leaning on numbers I can&rsquo;t stand behind.</p>
+    </div>
+
+    <h3 class="sub-head">Prompt experiments (Gemini Pro)</h3>
+    <details class="accordion">
+      <summary>01 &mdash; &ldquo;The Cost of a Prompt&rdquo; Calculator</summary>
+      <div class="accordion-body"><p>Asked the model to build an interactive calculator with a slider (1&ndash;100 prompts/day) updating water, rare-earth, and embodied-carbon metrics in real time.</p></div>
+    </details>
+    <details class="accordion">
+      <summary>02 &mdash; The Corporate Transparency Scorecard</summary>
+      <div class="accordion-body"><p>Asked for a responsive grid rating Google, Microsoft, Meta, and OpenAI against 2026 EU Digital Product Passport standards, with a hover-revealed &ldquo;Demand Transparency&rdquo; action.</p></div>
+    </details>
+    <details class="accordion">
+      <summary>03 &mdash; The &ldquo;Community Pushback&rdquo; Map</summary>
+      <div class="accordion-body"><p>Asked for a two-column &ldquo;Take Action&rdquo; section pairing a map of areas fighting expansions with a step-by-step local toolkit and a City Council email template.</p></div>
+    </details>
+    <details class="accordion">
+      <summary>04 &mdash; The &ldquo;Right to Repair&rdquo; Policy Hub</summary>
+      <div class="accordion-body"><p>Asked for a timeline explaining the 1-to-3-year chip lifespan, ending in a split call-to-action linking Right to Repair law and the EU Digital Product Passport.</p></div>
+    </details>
+  </section>
+
+  <!-- AUTHORSHIP -->
+  <section class="band">
+    <div class="section-head">
+      <span class="section-index">03</span>
+      <h2 class="section-title">AUTHORSHIP<br>&amp; AI</h2>
+      <p class="section-kicker">An honest account of what I made and what the AI did.</p>
+    </div>
+    <div class="grid grid-2">
+      <article class="card card-green-edge">
+        <h4>How I kept authorship</h4>
+        <p>I strictly managed the AI coding agent&rsquo;s focus. When it tried to fold curiosity-driven tangents into the actual project, I told it &ldquo;no.&rdquo; The AI was a coding assistant, not an art director. The structure, content hierarchy, and boundaries were mine.</p>
+      </article>
+      <article class="card card-green-edge">
+        <h4>What the AI shaped</h4>
+        <p>I fed it many visual references; it suggested the term &ldquo;Tactical Terminal,&rdquo; which captured the design intent I already had but lacked words for. I also deliberately refused AI-generated images &mdash; this site uses only real, verified photography, because the physical reality is the whole point.</p>
+      </article>
+    </div>
+
+    <div class="callout callout-crimson">
+      <span class="callout-label">The honest contradiction</span>
+      <p>This site&rsquo;s structure was built with AI &mdash; a demonstration of how powerful these tools are. But that doesn&rsquo;t erase the environmental cost the site documents. Both things are true at once, and naming that tension is exactly why the fight for transparency and community rights matters.</p>
+    </div>
+  </section>
+
+  <!-- REFLECTION -->
+  <section class="band band-alt">
+    <div class="section-head">
+      <span class="section-index">04</span>
+      <h2 class="section-title">REFLECTION</h2>
+      <p class="section-kicker">What changed in my thinking &mdash; and what&rsquo;s next.</p>
+    </div>
+    <div class="reflection-body">
+      <p class="body">My biggest shift was learning to pick at an issue from its core. Solving from the outside &mdash; appealing to corporate goodwill &mdash; changes nothing if the root process of digital economic growth stays the same. That moved the project from passive observation to active defense: equipping people with the legal and visual tools to demand transparency and protect their own resources.</p>
+      <p class="body">I also learned to steer AI intentionally, setting firm boundaries so the project stayed concentrated instead of drifting toward whatever tangent the model found interesting. And I learned to distrust a clean number until I can trace it &mdash; a habit this project forced on me and that I built into the site itself.</p>
+      <p class="body">If I had another ten weeks, I&rsquo;d expand this into a live, localized intelligence system: an early-warning feed for data-center scouting, an interactive map for residents to report real-time impacts, and a directory connecting users directly to active grassroots advocacy groups &mdash; moving the toolkit from education to ongoing, real-time community defense.</p>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section class="band">
+    <div class="section-head">
+      <span class="section-index">05</span>
+      <h2 class="section-title">THE RESEARCH<br>BASE</h2>
+      <p class="section-kicker">Selected primary sources, grouped by theme. Expand each to view.</p>
+    </div>
+
+    <details class="accordion">
+      <summary>Corporate disclosure &amp; transparency</summary>
+      <div class="accordion-body"><ul class="source-list">
+        <li>Microsoft &mdash; <a href="https://www.microsoft.com/en-us/corporate-responsibility/sustainability/report/">2025 Environmental Sustainability Report</a> (primary baseline)</li>
+        <li>Apple &mdash; 2026 Environmental Progress Report</li>
+        <li>Internet Policy Review &mdash; &ldquo;Not greenwashing, but still&hellip;&rdquo; on big tech&rsquo;s 2025 reports</li>
+        <li>The Guardian &mdash; Leaked document on Amazon datacenter water-use secrecy</li>
+        <li>Greenpeace &mdash; Clicking Clean</li>
+      </ul></div>
+    </details>
+    <details class="accordion">
+      <summary>Water, land &amp; community impact</summary>
+      <div class="accordion-body"><ul class="source-list">
+        <li>Lincoln Institute &mdash; <a href="https://www.lincolninst.edu/publications/land-lines-magazine/articles/land-water-impacts-data-centers/">Data Drain: Land and Water Impacts of the AI Boom</a></li>
+        <li>S&amp;P Global &mdash; <a href="https://www.spglobal.com/sustainable1/en/insights/special-editorial/beneath-the-surface-water-stress-in-data-centers">Beneath the Surface: Water Stress in Data Centers</a></li>
+        <li>University of Oxford &mdash; <a href="https://eng.ox.ac.uk/case-studies/the-true-cost-of-water-guzzling-data-centres">The True Cost of Water-Guzzling Data Centres</a></li>
+        <li>World Resources Institute &mdash; <a href="https://www.wri.org/insights/us-data-center-growth-impacts">7 Ways Data Centers Affect US Communities</a></li>
+        <li>Brookings &mdash; <a href="https://www.brookings.edu/articles/local-implications-data-centers-rural-communities-us/">Local Implications of Data Centers for Rural Communities</a></li>
+        <li>Kapor Foundation &mdash; The Unequal Burden of Data Centers (2025)</li>
+      </ul></div>
+    </details>
+    <details class="accordion">
+      <summary>Hardware lifecycle, e-waste &amp; critical minerals</summary>
+      <div class="accordion-body"><ul class="source-list">
+        <li>Princeton CITP &mdash; <a href="https://blog.citp.princeton.edu/2025/10/15/lifespan-of-ai-chips-the-300-billion-question/">Lifespan of AI Chips: The $300 Billion Question</a></li>
+        <li>arXiv &mdash; <a href="https://arxiv.org/html/2502.01671v1">Life-Cycle Emissions of AI Hardware: Cradle-to-Grave</a></li>
+        <li>IEA &mdash; <a href="https://www.iea.org/reports/global-critical-minerals-outlook-2024/outlook-for-key-minerals">Global Critical Minerals Outlook 2024</a></li>
+        <li>The Oregon Group &mdash; AI Data Centers to Drive 2% of Global Copper Demand by 2030</li>
+        <li>MIT News &mdash; <a href="https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117">Explained: Generative AI&rsquo;s Environmental Impact</a></li>
+      </ul></div>
+    </details>
+    <details class="accordion">
+      <summary>Cooling, waste-heat &amp; circular infrastructure</summary>
+      <div class="accordion-body"><ul class="source-list">
+        <li>Microsoft &mdash; <a href="https://datacenters.microsoft.com/wp-content/uploads/2025/04/CircularityWhitePaperApril2025.pdf">Four Pillars of a Circular Datacenter Hardware Program</a></li>
+        <li>Google &mdash; <a href="https://sustainability.google/stories/circular-economy/">Circular Economy</a> &amp; <a href="https://blog.google/company-news/inside-google/around-the-globe/google-europe/our-first-offsite-heat-recovery-project-lands-in-finland/">Offsite Heat Recovery in Finland</a></li>
+        <li>NVIDIA &mdash; <a href="https://blogs.nvidia.com/blog/blackwell-platform-water-efficiency-liquid-cooling-data-centers-ai-factories/">Blackwell Water-Efficiency Claims</a> (read critically)</li>
+        <li>ICEF &mdash; Sustainable Data Centers Roadmap (2025)</li>
+        <li>Elsevier RSER &mdash; Data Center Cooling &amp; Waste-Heat Recovery review</li>
+      </ul></div>
+    </details>
+    <details class="accordion">
+      <summary>Policy, regulation &amp; the Digital Product Passport</summary>
+      <div class="accordion-body"><ul class="source-list">
+        <li>data.europa.eu &mdash; <a href="https://data.europa.eu/en/news-events/news/eus-digital-product-passport-advancing-transparency-and-sustainability">The EU&rsquo;s Digital Product Passport</a></li>
+        <li>MDPI Sustainability &mdash; <a href="https://www.mdpi.com/2071-1050/16/1/396">DPP: A Pathway to Circularity</a></li>
+        <li>White &amp; Case LLP &mdash; Energy-Efficiency Requirements under the EU AI Act</li>
+        <li>Covington &amp; Burling LLP &mdash; EU Energy Efficiency Directive &amp; Datacenters (2025)</li>
+        <li>Harvard Kennedy School &mdash; Civil Society and the US AI Action Plan</li>
+      </ul></div>
+    </details>
+    <details class="accordion">
+      <summary>Advocacy &amp; community defense</summary>
+      <div class="accordion-body"><ul class="source-list">
+        <li>NAACP &mdash; Stop Dirty Data Centers &amp; 2026 Frontline Community Recommendations</li>
+        <li>Kate Crawford &mdash; <a href="https://anatomyof.ai/">Anatomy of an AI System / Atlas of AI</a></li>
+        <li>Grist &mdash; <a href="https://grist.org/indigenous/ai-is-a-double-edged-sword-for-indigenous-land-protection-un-experts-warn/">AI &amp; Indigenous Land Protection</a></li>
+        <li>Initiative for Responsible Mining Assurance &mdash; <a href="https://responsiblemining.net/">responsiblemining.net</a></li>
+      </ul></div>
+    </details>
+    <details class="accordion">
+      <summary>AI infrastructure &mdash; technical background</summary>
+      <div class="accordion-body"><ul class="source-list">
+        <li>IBM Think &mdash; What Is an AI Data Center?</li>
+        <li>Cisco &mdash; What Is an AI Data Center?</li>
+        <li>FPT &mdash; What Is AI Infrastructure?</li>
+        <li>arXiv &mdash; <a href="https://arxiv.org/html/2511.07090v1">Green AI: A Systematic Review</a></li>
+      </ul></div>
+    </details>
+
+    <p class="body-muted">Selected from a working set of roughly 130 references across seven research notebooks. Corporate reports are included as evidence to cross-examine, not to take at face value.</p>
+
+    <h3 class="sub-head">Project workspaces</h3>
+    <div class="link-row">
+      <a class="ext-link" href="[INSERT DATA: Milanote URL]">Milanote Board &rarr;</a>
+      <a class="ext-link" href="[INSERT DATA: GitHub repo URL]">GitHub Repository &rarr;</a>
+      <a class="ext-link" href="[INSERT DATA: GitHub Pages URL]">Live Site &rarr;</a>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Page navigation">
+    <a class="prev" href="green-ai.html"><span class="dir">&larr; Back</span><span class="pg-title">Green AI</span></a>
+    <a class="next" href="index.html"><span class="dir">Start over &rarr;</span><span class="pg-title">Home</span></a>
+  </nav>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-title">DIGITAL_SOVEREIGNTY</p>
+    <p class="footer-meta">An interactive learning project &middot; AI + Design Studio &middot; [INSERT DATA: Student name] &middot; [INSERT DATA: Year/Quarter]</p>
+    <p class="footer-note">Real photography only &mdash; no AI-generated imagery. Built with hand-written HTML &amp; CSS.</p>
+  </footer>
+</body>
+</html>
