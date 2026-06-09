@@ -158,7 +158,7 @@ summary:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
 .hero-title {
   font-family: var(--font-head);
   /* maximalist scaling via clamp() */
-  font-size: clamp(3rem, 1rem + 13vw, 9rem);
+  font-size: clamp(3rem, 1rem + 13vw, 8.5rem);
   line-height: 0.92;
   letter-spacing: -1px;
   text-transform: uppercase;
