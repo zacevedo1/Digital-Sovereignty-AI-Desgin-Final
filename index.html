@@ -89,6 +89,7 @@
         individual use compounds across millions of people, the reason a single
         person&rsquo;s habits feel harmless while the industry&rsquo;s footprint is enormous.
         Exact per-prompt figures are widely disputed; <a href="behind-the-project.html">here&rsquo;s why this project doesn&rsquo;t publish them &rarr;</a>
+        We don&rsquo;t show a precise &ldquo;equals X miles driven&rdquo; here on purpose: those per-prompt figures are exactly the disputed numbers this project refuses to repeat. What&rsquo;s certain isn&rsquo;t the size of one prompt. It&rsquo;s that millions of them, multiplied, reshape real grids and watersheds.
       </p>
     </div>
 
@@ -107,7 +108,7 @@
     </div>
     <div class="grid grid-5">
       <a class="card card-product" href="what-is.html" style="text-decoration:none;color:inherit;">
-        <span class="card-tag tag-green">STEP 01</span>
+        <span class="card-tag tag-amber">STEP 01</span>
         <h4>Understand</h4>
         <p>What an AI data center actually is and how it differs from ordinary computing.</p>
       </a>
@@ -122,7 +123,7 @@
         <p>The documented impacts on people, health, land, and local economies, and the secrecy that hides them.</p>
       </a>
       <a class="card card-threat" href="fight-back.html" style="text-decoration:none;color:inherit;">
-        <span class="card-tag tag-amber">STEP 04</span>
+        <span class="card-tag tag-green">STEP 04</span>
         <h4>Fight back</h4>
         <p>The legal toolkit: zoning, FOIA, NDAs, utility interventions, the 10th Amendment, and community benefit agreements.</p>
       </a>
@@ -173,11 +174,11 @@
         countEl.textContent = prompts;
 
         // individual impact scales gently with usage (stays modest)
-        var individual = Math.min(100, 5 + prompts * 0.85);
+        var individual = Math.min(100, 5 + prompts * 0.03);
 
         // the "x millions of users" bar ramps faster, to make the
         // compounding point: small personal use, huge collective total
-        var collective = Math.min(100, 15 + prompts * 0.9);
+        var collective = Math.min(100, 10 + prompts * 1.2);
 
         fillWater.style.width  = individual + '%';
         fillEnergy.style.width = individual + '%';
